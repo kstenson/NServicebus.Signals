@@ -32,13 +32,10 @@ namespace Signal
             try
             {
                 url = ConfigurationManager.ConnectionStrings["SignalsURL"].ConnectionString;
-                AppDomain.CurrentDomain.ProcessExit += (sender, args) => Stop();
-                Console.CancelKeyPress += (sender, args) => Stop();
-
             }
             catch (NullReferenceException)
             {
-                Logger.ErrorFormat("Health Monitor Connectionstring missing from config. Please add a connection string with the key [HealthMonitorURL]");
+                Logger.ErrorFormat("Signals ConnectionString missing from config. Please add a connection string with the key [SignalsURL]");
             }
         }
 
@@ -104,18 +101,16 @@ namespace Signal
             dynamic response = new ExpandoObject();
 
             XmlMessageSerializer serializer = new XmlMessageSerializer(new MessageMapper());
+            var message = serializer.Deserialize(new MemoryStream(e.Message.Body)).First();
+
             response.Endpoint = bus.InputAddress.Queue;
             response.Time = DateTime.UtcNow;
-            response.type = serializer.Deserialize(new MemoryStream(e.Message.Body)).First().GetType().ToString();
-            response.body = serializer.Deserialize(new MemoryStream(e.Message.Body)).First();
+            response.type = message.GetType().ToString();
+            response.body = message;
             response.headers = e.Message.Headers;
 
 
             _monitor.Invoke("MessageReceived", response);
-
-
         }
-
-
     }
 }
