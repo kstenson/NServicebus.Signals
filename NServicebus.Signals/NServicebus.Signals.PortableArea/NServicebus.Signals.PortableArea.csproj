@@ -151,6 +151,14 @@
     <EmbeddedResource Include="Areas\Signals\Scripts\jquery-1.6.4.min.js" />
     <EmbeddedResource Include="Areas\Signals\Scripts\jquery.signalR-0.5.2.js" />
     <EmbeddedResource Include="Areas\Signals\Scripts\jquery.signalR-0.5.2.min.js" />
+    <EmbeddedResource Include="Areas\Signals\Content\bootstrap-responsive.css" />
+    <EmbeddedResource Include="Areas\Signals\Content\bootstrap-responsive.min.css" />
+    <EmbeddedResource Include="Areas\Signals\Content\bootstrap.css" />
+    <EmbeddedResource Include="Areas\Signals\Content\bootstrap.min.css" />
+    <EmbeddedResource Include="Areas\Signals\Content\images\glyphicons-halflings-white.png" />
+    <EmbeddedResource Include="Areas\Signals\Content\images\glyphicons-halflings.png" />
+    <EmbeddedResource Include="Areas\Signals\Scripts\bootstrap.js" />
+    <EmbeddedResource Include="Areas\Signals\Scripts\bootstrap.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -162,7 +170,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Signals\Models\" />
-    <Folder Include="Areas\Signals\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -174,6 +181,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Areas\Signals\Views\Dashboard\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Signals\Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Signals\Views\_ViewStart.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
