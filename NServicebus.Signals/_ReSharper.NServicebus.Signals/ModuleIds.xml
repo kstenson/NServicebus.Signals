@@ -1,5 +1,5 @@
 <Modules>
   <Module PersistentId="C912D2F0-0F08-4F79-83CC-BF409CC8FA98" ModuleId="NServicebus.Signals.Web" />
-  <Module PersistentId="10087543-0183-4A0F-87FB-970B69F5C27B" ModuleId="NServicebus.Signals.PortableArea" />
   <Module PersistentId="25AD9170-179F-450A-8B30-05C45C866617" ModuleId="NServicebus.Signals.PortableArea_1" />
+  <Module PersistentId="604FAC13-30C0-462C-A8FD-274FE87CF16D" ModuleId="Signal" />
 </Modules>
