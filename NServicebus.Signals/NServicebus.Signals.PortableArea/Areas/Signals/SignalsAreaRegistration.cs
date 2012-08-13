@@ -42,13 +42,5 @@ namespace NServicebus.Signals.PortableArea.Areas.Signals
                 new[] { "NServicebus.Signals.PortableArea.Areas.Signals.Controllers", "MvcContrib" }
             );
         }
-        public override void RegisterArea(AreaRegistrationContext context)
-        {
-            context.MapRoute(
-                "Signals_default",
-                "Signals/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
-            );
-        }
     }
 }
